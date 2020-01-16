@@ -17,6 +17,7 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
             loadData()
+         NotificationCenter.default.addObserver(self, selector: #selector(saveData), name: UIApplication.willResignActiveNotification, object: nil)
     }
 
     func getFilePath()-> String{
@@ -32,7 +33,29 @@ class ViewController: UIViewController {
     
     func loadData()
     {
+        let filePath = getFilePath()
         books = [Book]()
+        if FileManager.default.fileExists(atPath: filePath)
+        {
+            do {
+                // extract data
+                let fileContents = try String(contentsOfFile: filePath)
+                let contentArray = fileContents.components(separatedBy: "\n")
+                for content in contentArray{
+                    let bookContent = content.components(separatedBy: ",")
+                    if bookContent.count  == 4
+                    {
+                        let book = Book(title: bookContent[0], author: bookContent[1], page: Int(bookContent[2])!, year: Int(bookContent[3])!)
+                        books?.append(book)
+                       
+                    }
+                }
+            }
+            catch{
+                print(error)
+            }
+        }
+        
         
     }
     
@@ -50,13 +73,28 @@ class ViewController: UIViewController {
             textField.resignFirstResponder()
         }
     }
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let BookTable = segue.destination as? BookTableVC{
             BookTable.books = self.books
-            
-            
         }
     }
+    
+    @objc func saveData(){
+        let filePath = getFilePath()
+        var saveString = ""
+        for book in books!{
+            saveString = "\(saveString)\(book.title),\(book.author),\(book.page),\(book.year)\n"
+        }
+        //write to path
+        do {
+            try saveString.write(toFile: filePath, atomically: true, encoding: .utf8)
+        }
+        catch{
+            print(error)
+        }
+    }
+    
  
 }
 
