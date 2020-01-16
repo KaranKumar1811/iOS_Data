@@ -50,7 +50,13 @@ class ViewController: UIViewController {
             textField.resignFirstResponder()
         }
     }
-
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let BookTable = segue.destination as? BookTableVC{
+            BookTable.books = self.books
+            
+            
+        }
+    }
  
 }
 

@@ -8,7 +8,7 @@
 
 import UIKit
 
-class BookTableVCTableViewController: UITableViewController {
+class BookTableVC: UITableViewController {
 
     var books : [Book]?
     override func viewDidLoad() {

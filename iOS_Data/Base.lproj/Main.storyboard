@@ -106,10 +106,10 @@
             </objects>
             <point key="canvasLocation" x="1042.0289855072465" y="138.61607142857142"/>
         </scene>
-        <!--Book TableVC Table View Controller-->
+        <!--Book TableVC-->
         <scene sceneID="IXo-rC-SKI">
             <objects>
-                <tableViewController id="z5h-20-AT7" customClass="BookTableVCTableViewController" customModule="iOS_Data" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="z5h-20-AT7" customClass="BookTableVC" customModule="iOS_Data" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="Jqi-Ih-lo3">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
