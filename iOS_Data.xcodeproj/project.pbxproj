@@ -15,6 +15,7 @@
 		9BC5B2D123D117EC000EA01D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9BC5B2CF23D117EC000EA01D /* LaunchScreen.storyboard */; };
 		9BC5B2DA23D11C92000EA01D /* Book.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BC5B2D923D11C92000EA01D /* Book.swift */; };
 		9BC5B2DC23D1208C000EA01D /* BookTableVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BC5B2DB23D1208C000EA01D /* BookTableVC.swift */; };
+		9BC5B2DF23D12FE2000EA01D /* BookModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 9BC5B2DD23D12FE2000EA01D /* BookModel.xcdatamodeld */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		9BC5B2D223D117EC000EA01D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9BC5B2D923D11C92000EA01D /* Book.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Book.swift; sourceTree = "<group>"; };
 		9BC5B2DB23D1208C000EA01D /* BookTableVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookTableVC.swift; sourceTree = "<group>"; };
+		9BC5B2DE23D12FE2000EA01D /* BookModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = BookModel.xcdatamodel; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,6 +79,7 @@
 			isa = PBXGroup;
 			children = (
 				9BC5B2D923D11C92000EA01D /* Book.swift */,
+				9BC5B2DD23D12FE2000EA01D /* BookModel.xcdatamodeld */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -156,6 +159,7 @@
 				9BC5B2C923D117EC000EA01D /* ViewController.swift in Sources */,
 				9BC5B2DC23D1208C000EA01D /* BookTableVC.swift in Sources */,
 				9BC5B2C523D117EC000EA01D /* AppDelegate.swift in Sources */,
+				9BC5B2DF23D12FE2000EA01D /* BookModel.xcdatamodeld in Sources */,
 				9BC5B2C723D117EC000EA01D /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -352,6 +356,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		9BC5B2DD23D12FE2000EA01D /* BookModel.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				9BC5B2DE23D12FE2000EA01D /* BookModel.xcdatamodel */,
+			);
+			currentVersion = 9BC5B2DE23D12FE2000EA01D /* BookModel.xcdatamodel */;
+			path = BookModel.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 9BC5B2B923D117EC000EA01D /* Project object */;
 }

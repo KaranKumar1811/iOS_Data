@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CoreData
 
 class ViewController: UIViewController {
 
@@ -92,6 +93,38 @@ class ViewController: UIViewController {
         }
         catch{
             print(error)
+        }
+        
+        func saveCoreData(){
+            // create an instance of app delegate
+            let appDelegate = UIApplication.shared.delegate as! AppDelegate
+            // second step is context
+            
+            let managedContext = appDelegate.persistentContainer.viewContext
+            
+            for  book in books!
+            {
+                let bookEntity = NSEntityDescription.insertNewObject(forEntityName: "Book", into: managedContext)
+                bookEntity.setValue(book.title, forKey: "title")
+                bookEntity.setValue(book.author, forKey: "author")
+                 bookEntity.setValue(book.page, forKey: "pages")
+                 bookEntity.setValue(book.year, forKey: "year")
+                
+                // save context
+                do{
+                    try managedContext.save()
+                }catch{
+                    print(error)
+                }
+            }
+        }
+        
+        func loadCoreData(){
+            
+        }
+        
+        func clearCoreData(){
+            
         }
     }
     
